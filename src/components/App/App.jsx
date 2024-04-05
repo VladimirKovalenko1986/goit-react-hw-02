@@ -73,6 +73,9 @@ export default function App() {
           </Options>
         )}
       </div>
+
+      {/* If renderyng text */}
+
       {/* {totalFeedback > 0 ? (
                 <div>
                     <Feedback>Good: {feedback.good}</Feedback>
