@@ -23,7 +23,6 @@ export default function App() {
 
   useEffect(() => {
     const savedFeedback = localStorage.getItem(localFeedbackKey);
-    console.log(savedFeedback);
     if (savedFeedback) {
       setFeedback(JSON.parse(savedFeedback));
     }
