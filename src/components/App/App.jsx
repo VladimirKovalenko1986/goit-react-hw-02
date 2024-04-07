@@ -22,19 +22,20 @@ export default function App() {
   });
 
   const updateFeedback = (feedbackType) => {
-    setFeedback((prevFeedback) => {
-      const updatedFeedback = {
-        ...prevFeedback,
-        [feedbackType]: prevFeedback[feedbackType] + 1,
-      };
-      updatedFeedback.total =
-        updatedFeedback.good + updatedFeedback.neutral + updatedFeedback.bad;
-      updatedFeedback.positive =
-        updatedFeedback.total !== 0
-          ? Math.round((updatedFeedback.good / updatedFeedback.total) * 100)
-          : 0;
-      return updatedFeedback;
-    });
+    const updatedFeedback = {
+      ...feedback,
+      [feedbackType]: feedback[feedbackType] + 1,
+    };
+
+    updatedFeedback.total =
+      updatedFeedback.good + updatedFeedback.neutral + updatedFeedback.bad;
+
+    updatedFeedback.positive =
+      updatedFeedback.total !== 0
+        ? Math.round((updatedFeedback.good / updatedFeedback.total) * 100)
+        : 0;
+
+    setFeedback(updatedFeedback);
   };
 
   useEffect(() => {
