@@ -55,15 +55,11 @@ export default function App() {
         intial={intial}
       />
       {/* {feedback.total > 0 ? (
-        <Feedback feedback={feedback} total={totalFeedback} />
+        <Feedback feedback={feedback} />
       ) : (
         <Notification text="No feedback yet" />
       )} */}
-      <Feedback
-        feedback={feedback}
-        total={feedback.total}
-        positive={feedback.positive}
-      />
+      <Feedback feedback={feedback} />
     </div>
   );
 }
