@@ -2,7 +2,7 @@ import css from "./App.module.css";
 import Description from "../Description/Description";
 import Options from "../Options/Options";
 import Feedback from "../Feedback/Feedback";
-import Notification from "../Notification/Notification";
+// import Notification from "../Notification/Notification";
 import { useState, useEffect } from "react";
 
 export default function App() {
@@ -16,10 +16,9 @@ export default function App() {
   const localFeedbackKey = "feedbackKey";
   const [feedback, setFeedback] = useState(() => {
     const savedFeedbackLocal = window.localStorage.getItem(localFeedbackKey);
-    if (savedFeedbackLocal !== null) {
-      return JSON.parse(savedFeedbackLocal);
-    }
-    return intial;
+    return savedFeedbackLocal !== null
+      ? JSON.parse(savedFeedbackLocal)
+      : intial;
   });
 
   const updateFeedback = (feedbackType) => {
