@@ -15,9 +15,9 @@ export default function App() {
   };
   const localFeedbackKey = "feedbackKey";
   const [feedback, setFeedback] = useState(() => {
-    const savedClicks = window.localStorage.getItem(localFeedbackKey);
-    if (savedClicks !== null) {
-      return JSON.parse(savedClicks);
+    const savedFeedbackLocal = window.localStorage.getItem(localFeedbackKey);
+    if (savedFeedbackLocal !== null) {
+      return JSON.parse(savedFeedbackLocal);
     }
     return intial;
   });
