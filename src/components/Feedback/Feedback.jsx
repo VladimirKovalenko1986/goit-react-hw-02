@@ -1,7 +1,9 @@
 import css from "./Feedback.module.css";
 
 export default function Feedback({
-  feedback: { good, neutral, bad, total, positive },
+  feedback: { good, neutral, bad },
+  total,
+  positive,
 }) {
   return (
     <div>
